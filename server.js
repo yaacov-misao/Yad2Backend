@@ -11,7 +11,7 @@ connectDB()
 const app = express();
 
 // Allow requests from specific origins
-const allowedOrigins = ['https://yad2f.onrender.com', 'http://localhost:3000'];
+const allowedOrigins = ['*'];
 app.use(cors({
   origin: function (origin, callback) {
     if (allowedOrigins.includes(origin) || !origin) {
