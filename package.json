@@ -4,7 +4,7 @@
   "description": "Final Project for High Tech course",
   "main": "server.js",
   "scripts": {
-    "start": "node backend/server.js",
+    "start": "node app.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix frontend"
   },
