@@ -10,8 +10,6 @@ connectDB()
 
 const app = express()
 
-const cors = require('cors');
-
 const app = express();
 
 // Allow requests from specific origins
