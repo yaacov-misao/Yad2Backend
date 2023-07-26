@@ -10,7 +10,30 @@ connectDB()
 
 const app = express()
 
-app.use(cors());
+const express = require('express');
+const cors = require('cors');
+
+const app = express();
+
+// Allow requests from specific origins
+const allowedOrigins = ['https://yad2f.onrender.com/', 'http://localhost:3000'];
+app.use(cors({
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
+
+// Your other routes and middleware go here...
+
+const port = 5003;
+app.listen(port, () => {
+  console.log(`Server started on port ${port}`);
+});
+
 app.use(express.json())
 app.use(express.urlencoded({ extended: false}))
 
