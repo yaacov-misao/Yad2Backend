@@ -11,6 +11,16 @@ connectDB()
 const app = express();
 
 // Allow requests from specific origins
+const allowedOrigins = ['http://example.com', 'http://localhost:3000'];
+app.use(cors({
+  origin: function (origin, callback) {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+}));
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: false}))
