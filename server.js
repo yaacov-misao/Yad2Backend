@@ -11,7 +11,7 @@ connectDB()
 const app = express();
 
 // Allow requests from specific origins
-app.use(cors())
+ 
 
 // Your other routes and middleware go here...
  
