@@ -23,8 +23,7 @@ app.use(cors({
 }));
 
 // Your other routes and middleware go here...
-
-const port = 5003;
+ 
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
 });
